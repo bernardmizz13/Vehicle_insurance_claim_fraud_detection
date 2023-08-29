@@ -2,7 +2,7 @@ Insurance vehicle claim fraud detection ~15000 records (could be that it was ret
 
 Data: https://www.kaggle.com/datasets/shivamb/vehicle-claim-fraud-detection
 
-INFO: https://blogs.oracle.com/machinelearning/post/a-two-step-process-for-detecting-fraud-using-oracle-machine-learning
+INFO (small sub-set of the dataset): https://blogs.oracle.com/machinelearning/post/a-two-step-process-for-detecting-fraud-using-oracle-machine-learning
 
 Research papers:
 
