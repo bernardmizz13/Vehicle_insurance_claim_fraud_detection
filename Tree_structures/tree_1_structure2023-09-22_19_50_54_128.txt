@@ -1,31 +1,8 @@
 |--- BasePolicy <= 1.50
 |   |--- Fault <= 0.50
 |   |   |--- PolicyType <= 0.50
-|   |   |   |--- AgeOfPolicyHolder <= 5.50
-|   |   |   |   |--- AgeOfPolicyHolder <= 1.00
-|   |   |   |   |   |--- AccidentArea <= 0.50
-|   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- AccidentArea >  0.50
-|   |   |   |   |   |   |--- DayOfWeek <= 5.50
-|   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 0.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- DayOfWeekClaimed >  0.50
-|   |   |   |   |   |   |   |   |--- DriverRating <= 3.50
-|   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 3.50
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 2.00
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  2.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  3.50
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 5.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed >  5.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- DriverRating >  3.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- DayOfWeek >  5.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- AgeOfPolicyHolder >  1.00
+|   |   |   |--- Age <= 45.50
+|   |   |   |   |--- AgeOfVehicle <= 6.50
 |   |   |   |   |   |--- Age <= 29.50
 |   |   |   |   |   |   |--- MonthClaimed <= 6.50
 |   |   |   |   |   |   |   |--- MonthClaimed <= 5.50
@@ -47,10 +24,10 @@
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |--- MaritalStatus >  1.50
 |   |   |   |   |   |   |   |   |   |--- Make <= 9.50
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonthClaimed <= 3.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonthClaimed >  3.00
+|   |   |   |   |   |   |   |   |   |   |--- Month <= 6.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- Month >  6.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |   |--- Make >  9.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |--- MonthClaimed >  6.50
@@ -77,9 +54,9 @@
 |   |   |   |   |   |   |   |   |   |   |--- DriverRating >  2.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |   |   |--- Month >  6.00
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 1.00
+|   |   |   |   |   |   |   |   |   |   |--- Sex <= 0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek >  1.00
+|   |   |   |   |   |   |   |   |   |   |--- Sex >  0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
 |   |   |   |   |   |   |   |   |--- Age >  36.50
 |   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 0.50
@@ -123,12 +100,35 @@
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
 |   |   |   |   |   |   |   |   |--- Deductible >  450.00
 |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |--- AgeOfPolicyHolder >  5.50
+|   |   |   |   |--- AgeOfVehicle >  6.50
+|   |   |   |   |   |--- AccidentArea <= 0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- AccidentArea >  0.50
+|   |   |   |   |   |   |--- DayOfWeek <= 5.50
+|   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- DayOfWeekClaimed >  0.50
+|   |   |   |   |   |   |   |   |--- DriverRating <= 3.50
+|   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 3.50
+|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 2.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  2.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  3.50
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 5.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed >  5.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- DriverRating >  3.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- DayOfWeek >  5.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- Age >  45.50
 |   |   |   |   |--- Make <= 1.00
 |   |   |   |   |   |--- WeekOfMonth <= 3.50
-|   |   |   |   |   |   |--- Age <= 66.00
+|   |   |   |   |   |   |--- Month <= 7.50
 |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- Age >  66.00
+|   |   |   |   |   |   |--- Month >  7.50
 |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |--- WeekOfMonth >  3.50
 |   |   |   |   |   |   |--- class: 1
@@ -136,16 +136,16 @@
 |   |   |   |   |   |--- VehiclePrice <= 0.50
 |   |   |   |   |   |   |--- MonthClaimed <= 7.50
 |   |   |   |   |   |   |   |--- NumberOfSuppliments <= 1.50
-|   |   |   |   |   |   |   |   |--- AgeOfVehicle <= 4.00
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- AgeOfVehicle >  4.00
-|   |   |   |   |   |   |   |   |   |--- Deductible <= 600.00
-|   |   |   |   |   |   |   |   |   |   |--- AgeOfVehicle <= 5.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- AgeOfVehicle >  5.50
+|   |   |   |   |   |   |   |   |--- Deductible <= 600.00
+|   |   |   |   |   |   |   |   |   |--- AgeOfVehicle <= 5.50
+|   |   |   |   |   |   |   |   |   |   |--- Make <= 7.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- Deductible >  600.00
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- Make >  7.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- AgeOfVehicle >  5.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- Deductible >  600.00
+|   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |--- NumberOfSuppliments >  1.50
 |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- MonthClaimed >  7.50
@@ -180,13 +180,13 @@
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |--- VehiclePrice >  4.50
 |   |   |   |   |   |   |   |   |--- DriverRating <= 1.50
-|   |   |   |   |   |   |   |   |   |--- Make <= 13.00
+|   |   |   |   |   |   |   |   |   |--- Age <= 51.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- Make >  13.00
-|   |   |   |   |   |   |   |   |   |   |--- Age <= 51.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- Age >  51.00
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- Age >  51.50
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek >  3.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |   |--- DriverRating >  1.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- DayOfWeek >  5.50
@@ -221,23 +221,23 @@
 |   |   |   |   |   |   |   |--- WeekOfMonthClaimed >  2.50
 |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |--- DayOfWeek >  4.50
-|   |   |   |   |   |   |--- PastNumberOfClaims <= 2.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- PastNumberOfClaims >  2.50
-|   |   |   |   |   |   |   |--- DriverRating <= 3.50
+|   |   |   |   |   |   |--- Sex <= 0.50
+|   |   |   |   |   |   |   |--- WeekOfMonthClaimed <= 3.50
 |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- DriverRating >  3.50
-|   |   |   |   |   |   |   |   |--- Make <= 13.00
+|   |   |   |   |   |   |   |--- WeekOfMonthClaimed >  3.50
+|   |   |   |   |   |   |   |   |--- MonthClaimed <= 3.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- Make >  13.00
+|   |   |   |   |   |   |   |   |--- MonthClaimed >  3.50
 |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- Sex >  0.50
+|   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |--- NumberOfSuppliments >  2.50
 |   |   |   |   |   |--- MonthClaimed <= 0.50
 |   |   |   |   |   |   |--- Age <= 42.50
-|   |   |   |   |   |   |   |--- WeekOfMonth <= 4.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- WeekOfMonth >  4.50
+|   |   |   |   |   |   |   |--- Days_Policy_Claim <= 1.50
 |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- Days_Policy_Claim >  1.50
+|   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- Age >  42.50
 |   |   |   |   |   |   |   |--- DayOfWeek <= 1.50
 |   |   |   |   |   |   |   |   |--- class: 1
@@ -245,13 +245,13 @@
 |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 0.50
 |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  0.50
-|   |   |   |   |   |   |   |   |   |--- Age <= 49.50
-|   |   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 2.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  2.00
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- Age >  49.50
+|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 2.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  2.50
+|   |   |   |   |   |   |   |   |   |   |--- Make <= 9.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |   |--- Make >  9.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |--- MonthClaimed >  0.50
 |   |   |   |   |   |   |--- MonthClaimed <= 7.50
 |   |   |   |   |   |   |   |--- Age <= 33.50
@@ -339,13 +339,13 @@
 |   |   |   |   |   |   |   |   |   |   |--- DayOfWeek >  3.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |   |--- MonthClaimed >  2.00
-|   |   |   |   |   |   |   |   |   |--- MonthClaimed <= 5.50
+|   |   |   |   |   |   |   |   |   |--- AccidentArea <= 0.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- MonthClaimed >  5.50
-|   |   |   |   |   |   |   |   |   |   |--- AccidentArea <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- AccidentArea >  0.50
+|   |   |   |   |   |   |   |   |   |--- AccidentArea >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 5.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed >  5.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |--- MaritalStatus >  1.50
 |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- WeekOfMonth >  3.50
@@ -358,12 +358,12 @@
 |   |   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 1.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
 |   |   |   |   |   |   |   |   |   |   |--- DayOfWeek >  1.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
 |   |   |   |   |   |   |   |   |   |--- Make >  2.50
 |   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments <= 1.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments >  1.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
 |   |   |   |   |   |   |   |   |--- DriverRating >  3.50
 |   |   |   |   |   |   |   |   |   |--- Month <= 0.50
 |   |   |   |   |   |   |   |   |   |   |--- VehiclePrice <= 1.50
@@ -378,19 +378,19 @@
 |   |   |   |   |   |   |   |   |   |   |--- Age <= 28.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
 |   |   |   |   |   |   |   |   |   |   |--- Age >  28.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
 |   |   |   |   |   |   |   |   |   |--- Age >  54.50
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 2.50
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 5.00
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed >  5.00
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  2.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |   |--- Age >  55.50
-|   |   |   |   |   |   |   |   |   |--- Age <= 66.50
+|   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 5.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- Age >  66.50
-|   |   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 1.50
+|   |   |   |   |   |   |   |   |   |--- DayOfWeek >  5.50
+|   |   |   |   |   |   |   |   |   |   |--- AccidentArea <= 0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  1.50
+|   |   |   |   |   |   |   |   |   |   |--- AccidentArea >  0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- Deductible >  450.00
 |   |   |   |   |   |   |   |--- class: 0
@@ -416,10 +416,10 @@
 |   |   |   |--- Month <= 7.50
 |   |   |   |   |--- class: 0
 |   |   |   |--- Month >  7.50
-|   |   |   |   |--- Age <= 43.50
-|   |   |   |   |   |--- class: 0
-|   |   |   |   |--- Age >  43.50
+|   |   |   |   |--- Fault <= 0.50
 |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Fault >  0.50
+|   |   |   |   |   |--- class: 0
 |   |--- Make >  1.00
 |   |   |--- Deductible <= 450.00
 |   |   |   |--- WeekOfMonthClaimed <= 3.50
@@ -428,16 +428,16 @@
 |   |   |   |   |   |   |--- WeekOfMonthClaimed <= 2.50
 |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- WeekOfMonthClaimed >  2.50
-|   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 4.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- DayOfWeekClaimed >  4.50
-|   |   |   |   |   |   |   |   |--- DayOfWeek <= 4.00
-|   |   |   |   |   |   |   |   |   |--- AgeOfVehicle <= 3.50
+|   |   |   |   |   |   |   |--- MonthClaimed <= 6.50
+|   |   |   |   |   |   |   |   |--- MonthClaimed <= 5.50
+|   |   |   |   |   |   |   |   |   |--- DriverRating <= 3.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- AgeOfVehicle >  3.50
+|   |   |   |   |   |   |   |   |   |--- DriverRating >  3.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- DayOfWeek >  4.00
-|   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- MonthClaimed >  5.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- MonthClaimed >  6.50
+|   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |--- Age >  26.50
 |   |   |   |   |   |   |--- WeekOfMonthClaimed <= 2.50
 |   |   |   |   |   |   |   |--- DriverRating <= 3.50
@@ -453,9 +453,9 @@
 |   |   |   |   |   |   |   |   |   |--- VehiclePrice <= 4.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |   |--- VehiclePrice >  4.50
-|   |   |   |   |   |   |   |   |   |   |--- MonthClaimed <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments <= 0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- MonthClaimed >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments >  0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |--- DriverRating >  3.50
 |   |   |   |   |   |   |   |   |--- class: 0
@@ -467,18 +467,18 @@
 |   |   |   |   |--- class: 0
 |   |   |--- Deductible >  450.00
 |   |   |   |--- MonthClaimed <= 5.50
-|   |   |   |   |--- NumberOfCars <= 0.50
-|   |   |   |   |   |--- Month <= 1.50
-|   |   |   |   |   |   |--- DayOfWeek <= 4.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- DayOfWeek >  4.50
-|   |   |   |   |   |   |   |--- AgeOfVehicle <= 4.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- AgeOfVehicle >  4.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- Month >  1.50
-|   |   |   |   |   |   |--- class: 0
-|   |   |   |   |--- NumberOfCars >  0.50
+|   |   |   |   |--- DayOfWeek <= 1.00
 |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- DayOfWeek >  1.00
+|   |   |   |   |   |--- VehiclePrice <= 0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- VehiclePrice >  0.50
+|   |   |   |   |   |   |--- Age <= 37.00
+|   |   |   |   |   |   |   |--- Month <= 3.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- Month >  3.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- Age >  37.00
+|   |   |   |   |   |   |   |--- class: 0
 |   |   |   |--- MonthClaimed >  5.50
 |   |   |   |   |--- class: 0

@@ -11,19 +11,19 @@
 |   |   |   |   |   |   |   |   |--- DayOfWeek <= 5.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |--- DayOfWeek >  5.50
-|   |   |   |   |   |   |   |   |   |--- Make <= 11.50
+|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 2.00
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- Make >  11.50
+|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  2.00
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- Month >  1.00
 |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |--- DayOfWeekClaimed >  5.50
 |   |   |   |   |   |   |--- AgeOfPolicyHolder <= 5.50
 |   |   |   |   |   |   |   |--- Age <= 30.00
-|   |   |   |   |   |   |   |   |--- VehiclePrice <= 0.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- VehiclePrice >  0.50
+|   |   |   |   |   |   |   |   |--- AgeOfVehicle <= 4.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- AgeOfVehicle >  4.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |--- Age >  30.00
 |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |--- AgeOfPolicyHolder >  5.50
@@ -31,17 +31,17 @@
 |   |   |   |   |--- WeekOfMonthClaimed >  1.50
 |   |   |   |   |   |--- WeekOfMonth <= 1.50
 |   |   |   |   |   |   |--- AccidentArea <= 0.50
-|   |   |   |   |   |   |   |--- Age <= 30.00
+|   |   |   |   |   |   |   |--- DayOfWeek <= 3.50
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- Age >  30.00
+|   |   |   |   |   |   |   |--- DayOfWeek >  3.50
 |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- AccidentArea >  0.50
 |   |   |   |   |   |   |   |--- Age <= 60.00
 |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |--- Age >  60.00
-|   |   |   |   |   |   |   |   |--- Age <= 63.00
+|   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 1.50
 |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- Age >  63.00
+|   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  1.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |--- WeekOfMonth >  1.50
 |   |   |   |   |   |   |--- Month <= 5.50
@@ -66,45 +66,45 @@
 |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |--- Age >  24.50
 |   |   |   |   |   |   |--- Days_Policy_Accident <= 3.50
-|   |   |   |   |   |   |   |--- WeekOfMonth <= 4.50
-|   |   |   |   |   |   |   |   |--- Age <= 72.50
-|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 0.50
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 3.00
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed >  3.00
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
-|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  0.50
-|   |   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 2.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
-|   |   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  2.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 12
-|   |   |   |   |   |   |   |   |--- Age >  72.50
+|   |   |   |   |   |   |   |--- MonthClaimed <= 7.50
+|   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 0.50
+|   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 3.00
+|   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- DayOfWeekClaimed >  3.00
+|   |   |   |   |   |   |   |   |   |   |--- Age <= 60.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- Age >  60.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  0.50
+|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 2.50
+|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims >  2.50
+|   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments <= 2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- NumberOfSuppliments >  2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |--- MonthClaimed >  7.50
+|   |   |   |   |   |   |   |   |--- VehiclePrice <= 0.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- WeekOfMonth >  4.50
-|   |   |   |   |   |   |   |   |--- AccidentArea <= 0.50
-|   |   |   |   |   |   |   |   |   |--- Age <= 36.50
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonthClaimed <= 1.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- WeekOfMonthClaimed >  1.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- Age >  36.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- AccidentArea >  0.50
-|   |   |   |   |   |   |   |   |   |--- AgeOfVehicle <= 2.50
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek >  0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- AgeOfVehicle >  2.50
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 5.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- DayOfWeek >  5.50
+|   |   |   |   |   |   |   |   |--- VehiclePrice >  0.50
+|   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  1.50
+|   |   |   |   |   |   |   |   |   |   |--- Make <= 5.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- Make >  5.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |--- Days_Policy_Accident >  3.50
-|   |   |   |   |   |   |   |--- AgeOfPolicyHolder <= 5.00
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- AgeOfPolicyHolder >  5.00
+|   |   |   |   |   |   |   |--- DayOfWeekClaimed <= 1.50
 |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- DayOfWeekClaimed >  1.50
+|   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |--- PolicyType >  3.50
 |   |   |   |   |   |--- NumberOfSuppliments <= 1.50
 |   |   |   |   |   |   |--- class: 0
@@ -114,15 +114,15 @@
 |   |   |   |   |   |   |   |   |--- Month <= 5.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |--- Month >  5.50
-|   |   |   |   |   |   |   |   |   |--- AccidentArea <= 0.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- AccidentArea >  0.50
+|   |   |   |   |   |   |   |   |   |--- BasePolicy <= 0.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- BasePolicy >  0.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |--- DayOfWeekClaimed >  5.50
 |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |--- Make >  3.50
 |   |   |   |   |   |   |   |--- Age <= 62.50
-|   |   |   |   |   |   |   |   |--- AgeOfPolicyHolder <= 6.50
+|   |   |   |   |   |   |   |   |--- Age <= 55.50
 |   |   |   |   |   |   |   |   |   |--- DayOfWeek <= 1.50
 |   |   |   |   |   |   |   |   |   |   |--- PastNumberOfClaims <= 2.00
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
@@ -133,7 +133,7 @@
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |   |   |   |--- DriverRating >  2.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |--- AgeOfPolicyHolder >  6.50
+|   |   |   |   |   |   |   |   |--- Age >  55.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |--- Age >  62.50
 |   |   |   |   |   |   |   |   |--- class: 1
@@ -150,17 +150,17 @@
 |   |   |   |   |   |   |   |   |--- DriverRating <= 3.50
 |   |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |   |   |   |--- DriverRating >  3.50
-|   |   |   |   |   |   |   |   |   |--- WeekOfMonth <= 3.00
+|   |   |   |   |   |   |   |   |   |--- Make <= 9.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- WeekOfMonth >  3.00
+|   |   |   |   |   |   |   |   |   |--- Make >  9.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |--- Age >  57.00
-|   |   |   |   |   |   |--- Make <= 11.00
-|   |   |   |   |   |   |   |--- PastNumberOfClaims <= 2.00
+|   |   |   |   |   |   |--- PastNumberOfClaims <= 1.50
+|   |   |   |   |   |   |   |--- Make <= 13.00
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- PastNumberOfClaims >  2.00
+|   |   |   |   |   |   |   |--- Make >  13.00
 |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- Make >  11.00
+|   |   |   |   |   |   |--- PastNumberOfClaims >  1.50
 |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |--- PolicyType >  0.50
 |   |   |   |   |   |--- class: 0
@@ -177,12 +177,12 @@
 |   |   |   |   |   |   |--- class: 0
 |   |--- Fault >  0.50
 |   |   |--- AddressChange_Claim <= 1.50
-|   |   |   |--- Deductible <= 450.00
+|   |   |   |--- AddressChange_Claim <= 0.50
 |   |   |   |   |--- class: 0
-|   |   |   |--- Deductible >  450.00
-|   |   |   |   |--- AgeOfPolicyHolder <= 6.00
+|   |   |   |--- AddressChange_Claim >  0.50
+|   |   |   |   |--- Age <= 51.00
 |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- AgeOfPolicyHolder >  6.00
+|   |   |   |   |--- Age >  51.00
 |   |   |   |   |   |--- class: 0
 |   |   |--- AddressChange_Claim >  1.50
 |   |   |   |--- class: 0
@@ -209,12 +209,12 @@
 |   |   |   |   |   |   |   |--- PastNumberOfClaims >  0.50
 |   |   |   |   |   |   |   |   |--- class: 0
 |   |   |   |   |   |--- WeekOfMonthClaimed >  4.50
-|   |   |   |   |   |   |--- Make <= 16.00
+|   |   |   |   |   |   |--- AgeOfVehicle <= 5.50
 |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- Make >  16.00
-|   |   |   |   |   |   |   |--- Age <= 41.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- Age >  41.50
+|   |   |   |   |   |   |--- AgeOfVehicle >  5.50
+|   |   |   |   |   |   |   |--- Year <= 1994.50
 |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |--- Year >  1994.50
+|   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |--- AgeOfPolicyHolder >  5.50
 |   |   |   |   |   |--- class: 0
